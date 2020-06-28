@@ -39,7 +39,7 @@ describe('Tests', function () {
       if (err) {
         console.log(err)
       }
-      console.log(blockchain.unlocked_accounts['0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd'].secretKey.toString('hex'))
+      console.log(blockchain.unlocked_accounts['0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd'].privateKey.toString('hex'))
       console.log(blockchain.unlocked_accounts['0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd'].address.toString('hex'))
 
       const web3 = new Web3('http://localhost:8545')
@@ -50,10 +50,10 @@ describe('Tests', function () {
       console.log({ oldBalance })
       let balance = await web3.eth.getBalance('0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd')
       console.log({ balance })
-      await sendEth(1, blockchain.unlocked_accounts['0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd'].secretKey)
+      await sendEth(1, blockchain.unlocked_accounts['0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd'].privateKey)
       balance = await web3.eth.getBalance('0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd')
       console.log({ balance })
-      await sendEth(1, blockchain.unlocked_accounts['0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd'].secretKey)
+      await sendEth(1, blockchain.unlocked_accounts['0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd'].privateKey)
       balance = await web3.eth.getBalance('0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd')
       console.log({ balance })
       const newBalance = await web3.eth.getBalance('0xc5Ec03b3CA0635AFD39706ceC37177206Ab15289')
@@ -80,12 +80,12 @@ describe('Tests', function () {
   })
   it.only('getBalance', async function () {
     const web3 = new Web3('https://ropsten.infura.io/v3/05b14d852f9949a9b4265ad97b8d0b12')
-    const wallet = { address: '0xc060c309409576f80c3bC80F7579008886E15695', secretKey: '8662c47ca6b47d5ceff5b88aa6d259e1c143e088930e84667f5b93fac527eff8' }
+    const wallet = { address: '0xc060c309409576f80c3bC80F7579008886E15695', privateKey: '8662c47ca6b47d5ceff5b88aa6d259e1c143e088930e84667f5b93fac527eff8' }
     await getBalance({ web3 }, wallet)
   })
   it('send Balance', async function () {
     const web3 = new Web3('https://ropsten.infura.io/v3/05b14d852f9949a9b4265ad97b8d0b12')
-    const from = { address: '0xc060c309409576f80c3bC80F7579008886E15695', secretKey: '8662c47ca6b47d5ceff5b88aa6d259e1c143e088930e84667f5b93fac527eff8' }
+    const from = { address: '0xc060c309409576f80c3bC80F7579008886E15695', privateKey: '8662c47ca6b47d5ceff5b88aa6d259e1c143e088930e84667f5b93fac527eff8' }
     const to = '0xc5Ec03b3CA0635AFD39706ceC37177206Ab15289'
     await sendBalance({ web3 }, { from, to })
   })
