@@ -1,30 +1,19 @@
-'use strict'
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
-import { readFileSync } from 'fs'
-import { expect } from 'chai'
-import { createWallets, insertWallet } from '../lib/eth/createWallet'
-import { sendEth } from '../lib/eth/sendEth'
+// const MongoMemoryServer = require('mongodb-memory-server').MongoMemoryServer
+// const MongoClient = require('mongodb').MongoClient
 
-import { provider, server } from 'ganache-cli'
-// https://www.npmjs.com/package/ganache-cli
-import Web3 from 'web3'
-import usdtContract from '../bin/test/contracts/usdt/TetherToken.json'
-import { deployContract } from './deployOnGanache'
-import { getBalance, sendBalance } from '../lib/usdt/helpers'
+import { Web3 } from 'web3'
+import { getUsdtBalance } from '../lib/usdt/balance'
 
-const MongoMemoryServer = require('mongodb-memory-server').MongoMemoryServer
-const MongoClient = require('mongodb').MongoClient
-const mongod = new MongoMemoryServer()
+// const mongod = new MongoMemoryServer()
 describe('Tests', function () {
   let db
   beforeEach(async () => {
-    const url = await mongod.getUri()
+    /*  const url = await mongod.getUri()
     const dbName = await mongod.getDbName()
     const client = await MongoClient.connect(url)
-    db = client.db(dbName)
+    db = client.db(dbName) */
   })
-
+  /*
   it('Creates 100 wallets and inserts them on db.', async function () {
     const wallets = createWallets(3)
     for (let i = 0; i < wallets.length; i++) {
@@ -73,12 +62,16 @@ describe('Tests', function () {
       console.log({ abi })
       deployContract({ web3 }, abi, bytecode)
     })
-  })
-  it('asd', async function () {
+  }) */
+  it.only('tete', async function () {
+    const from = { address: '0xc5Ec03b3CA0635AFD39706ceC37177206Ab15289', privateKey: '495946f877a81574a224d9d8c0072d4f5293c6fe67f79f89d00a03ee7f6ef2da' }
+    const to = '0x3d9eb4d54a8cc7ac760fc09f40a5a8915f0103dd'
     const web3 = new Web3('https://ropsten.infura.io/v3/05b14d852f9949a9b4265ad97b8d0b12')
-    await sendEth({ web3 }, 1)
-  })
-  it.only('getBalance', async function () {
+    // await sendUsdt({ web3 }, 1)
+    const balance = await getUsdtBalance({ web3 }, to)
+    console.log({ balance })
+  })/*
+  it('getBalance', async function () {
     const web3 = new Web3('https://ropsten.infura.io/v3/05b14d852f9949a9b4265ad97b8d0b12')
     const wallet = { address: '0xc060c309409576f80c3bC80F7579008886E15695', privateKey: '8662c47ca6b47d5ceff5b88aa6d259e1c143e088930e84667f5b93fac527eff8' }
     await getBalance({ web3 }, wallet)
@@ -88,5 +81,5 @@ describe('Tests', function () {
     const from = { address: '0xc060c309409576f80c3bC80F7579008886E15695', privateKey: '8662c47ca6b47d5ceff5b88aa6d259e1c143e088930e84667f5b93fac527eff8' }
     const to = '0xc5Ec03b3CA0635AFD39706ceC37177206Ab15289'
     await sendBalance({ web3 }, { from, to })
-  })
+  }) */
 })
