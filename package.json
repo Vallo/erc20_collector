@@ -1,7 +1,7 @@
 {
-  "name": "library-boilerplate-mocha",
+  "name": "decrypto-erc20-collector",
   "version": "0.0.0-semantic-release",
-  "description": "Rollup based javascript library boilerplate + babel 7, eslint, flow, jest, esdoc and live editing.",
+  "description": "Erc20 wallets colector.",
   "scripts": {
     "start": "better-npm-run start",
     "initDb": "better-npm-run initDb",
