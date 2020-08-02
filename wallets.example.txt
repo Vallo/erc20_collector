@@ -1,0 +1,7 @@
+address1:privateKey
+address2:privateKey
+address3:privateKey
+address4:privateKey
+address5:privateKey
+address6:privateKey
+address7:privateKey

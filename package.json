@@ -3,7 +3,9 @@
   "version": "0.0.0-semantic-release",
   "description": "Erc20 wallets colector.",
   "scripts": {
-    "start": "better-npm-run start",
+    "retirarUsdt": "better-npm-run retirarUsdt",
+    "retirarDai": "better-npm-run retirarDai",
+    "printBalances": "better-npm-run printBalances",
     "initDb": "better-npm-run initDb",
     "test": "better-npm-run test",
     "pretest": "npx run-s clean build",
@@ -81,14 +83,26 @@
   "main": "dist/library-boilerplate-mocha.cjs.js",
   "module": "dist/library-boilerplate-mocha.esm.js",
   "betterScripts": {
-    "start": {
-      "command": "npx babel-node -r dotenv/config  ./lib/index.js dotenv_config_path=./config.dev.env",
+    "retirarUsdt": {
+      "command": "npx babel-node -r dotenv/config  ./lib/withdrawUSDT.js dotenv_config_path=./config.dev.env",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "retirarDai": {
+      "command": "npx babel-node -r dotenv/config  ./lib/withdrawDAI.js dotenv_config_path=./config.dev.env",
       "env": {
         "NODE_ENV": "development"
       }
     },
     "initDb": {
       "command": "npx babel-node -r dotenv/config  ./lib/initDb.js dotenv_config_path=./config.dev.env",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "printBalances": {
+      "command": "npx babel-node -r dotenv/config  ./lib/getBalancesAndPrint.js dotenv_config_path=./config.dev.env",
       "env": {
         "NODE_ENV": "development"
       }
