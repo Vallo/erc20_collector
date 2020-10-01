@@ -1,6 +1,12 @@
 [ignore]
 .*/node_modules/npm/node_modules/config-chain/.*
-.*/dist/.*
+
+.*/\..*/.*
+.*/node_modules/bcryptjs/src/.*
+.*/node_modules/module-deps/*
+.*/node_modules/.*/\(lib\|test\).*\.json$
+.*/node_modules/@emotion/*
+.*/node_modules/react-select/*
 
 
 [include]
@@ -10,5 +16,7 @@
 [lints]
 
 [options]
+
+esproposal.optional_chaining=enable
 
 [strict]
