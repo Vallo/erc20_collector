@@ -1,3 +1,0 @@
-#!/bin/bash
-
-node -r dotenv/config ./lib/index.js dotenv_config_path=./config.dev.env

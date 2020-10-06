@@ -4,7 +4,6 @@
   "description": "Erc20 wallets colector.",
   "author": "Vallo",
   "scripts": {
-    "test": "npx babel-node ./lib/getBalancesAndPrint.js",
     "retirarUsdt": "npx babel-node ./lib/withdrawUSDT.js",
     "retirarDai": "npx babel-node  ./lib/withdrawDAI.js",
     "retirarEth": "npx babel-node ./lib/withdrawETH.js",
