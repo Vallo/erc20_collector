@@ -8,7 +8,7 @@
     "retirarDai": "npx babel-node  ./lib/withdrawDAI.js",
     "retirarEth": "npx babel-node ./lib/withdrawETH.js",
     "printBalances": "npx babel-node  ./lib/getBalancesAndPrint.js ",
-    "initDb": "npx babel-node -r  dotenv/config  ./lib/initDb.js",
+    "initDb": "npx babel-node ./lib/initDb.js",
     "flow": "npx flow",
     "lint": "eslint --fix ."
   },
