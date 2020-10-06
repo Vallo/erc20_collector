@@ -9,7 +9,8 @@
     "retirarEth": "npx babel-node ./lib/withdrawETH.js",
     "printBalances": "npx babel-node  ./lib/getBalancesAndPrint.js ",
     "initDb": "npx babel-node -r  dotenv/config  ./lib/initDb.js",
-    "flow": "npx flow"
+    "flow": "npx flow",
+    "lint": "eslint --fix ."
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -24,6 +25,14 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-flow": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "flow-bin": "^0.82.0"
   }
 }
