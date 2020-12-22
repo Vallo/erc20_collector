@@ -13,6 +13,7 @@
     "lint": "eslint --fix ."
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "ethereumjs-tx": "^2.1.2",
     "mongodb": "^3.5.9",
